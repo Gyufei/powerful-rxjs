@@ -4,4 +4,5 @@
 
  ## Demo地址
 
-+ [20行代码实现图片拖拽](http://www.gyufei.cn/powerful-rxjs/drag/index.html)
++ [20行代码实现图片拖拽](http://www.gyufei.cn/powerful-rxjs/drag)
++ [B站的视频画中画功能](http://www.gyufei.cn/powerful-rxjs/video-pip)

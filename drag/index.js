@@ -1,26 +1,18 @@
 /* global rxjs */
-const {
-  fromEvent
-} = rxjs
-
-const {
-  concatMapTo,
-  takeUntil,
-  withLatestFrom
-} = rxjs.operators
+const { fromEvent } = rxjs
+const { concatMapTo, takeUntil, withLatestFrom } = rxjs.operators 
 
 const dragDom = document.getElementById('drag')
-const body = document.body
 
-const mouseDown = fromEvent(dragDom, 'mousedown')
-const mouseMove = fromEvent(body, 'mousemove')
-const mouseUp = fromEvent(body, 'mouseup')
+const mouseDown$ = fromEvent(dragDom, 'mousedown')
+const mouseMove$ = fromEvent(document.body, 'mousemove')
+const mouseUp$ = fromEvent(document.body, 'mouseup')
 
-mouseDown.pipe(
-  concatMapTo(mouseMove.pipe(
-    takeUntil(mouseUp)
+mouseDown$.pipe(
+  concatMapTo(mouseMove$.pipe(
+    takeUntil(mouseUp$)
   )),
-  withLatestFrom(mouseDown, (mmove, mdown) => ({
+  withLatestFrom(mouseDown$, (mmove, mdown) => ({
     x: mmove.clientX - mdown.offsetX,
     y: mmove.clientY - mdown.offsetY
   })
