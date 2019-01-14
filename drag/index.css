@@ -1,7 +1,3 @@
-* {
-  user-select: none;
-}
-
 html body {
   height: 1000px;
 }
@@ -19,4 +15,14 @@ html body {
 img {
   height: 100%;
   width: 100%;
+}
+
+.code_show {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+
+  width: 600px;
+
+  z-index: -1;
 }

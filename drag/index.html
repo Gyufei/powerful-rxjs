@@ -3,12 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <title>rxjs-drag</title>
+  <link href="https://cdn.bootcss.com/highlight.js/9.13.1/styles/github-gist.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./index.css">
 </head>
 <body>
   <div id="drag">
     <img draggable="false" src="https://i.loli.net/2019/01/11/5c385f53bfbd7.jpg">
   </div>
+
+  <div class="code_show">
+    <h4>HTML:</h4>
+    <pre><code class="html xml">
+      &lt;script src="https://cdn.bootcss.com/rxjs/6.1.0/rxjs.umd.min.js"&gt;
+      &lt;/script&gt;
+      &lt;div id="drag"&gt;
+        &lt;img draggable="false" 
+          src="https://i.loli.net/2019/01/11/5c385f53bfbd7.jpg"&gt;
+      &lt;/div&gt;
+    </code></pre>
+
+    <h3>JavaScript:</h3>
+    <pre><code class="javascript">
+      const {
+        fromEvent
+      } = rxjs
+
+      const {
+        concatMapTo,
+        takeUntil,
+        withLatestFrom
+      } = rxjs.operators
+
+      const dragDom = document.getElementById('drag')
+      const body = document.body
+
+      const mouseDown = fromEvent(dragDom, 'mousedown')
+      const mouseMove = fromEvent(body, 'mousemove')
+      const mouseUp = fromEvent(body, 'mouseup')
+
+      mouseDown.pipe(
+        concatMapTo(mouseMove.pipe(
+          takeUntil(mouseUp)
+        )),
+        withLatestFrom(mouseDown, (mmove, mdown) => ({
+          x: mmove.clientX - mdown.offsetX,
+          y: mmove.clientY - mdown.offsetY
+        })
+        )
+      ).subscribe(pos => {
+        dragDom.style.transform = `translate(${pos.x}px, ${pos.y}px)`
+      })
+    </code></pre>
+
+    <h3>CSS:</h3>
+    <pre><code class="css">
+      html body {
+        height: 1000px;
+      }
+
+      #drag {
+        width: 120px;
+        height: 120px;
+
+        transform: translate(0, 0);
+
+        background-color: #c2f;
+        cursor: all-scroll;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    </code></pre>
+  </div>
+  <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   <script src="https://cdn.bootcss.com/rxjs/6.1.0/rxjs.umd.min.js"></script>
   <script src="./index.js"></script>
 </body>

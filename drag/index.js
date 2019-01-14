@@ -28,6 +28,3 @@ mouseDown.pipe(
 ).subscribe(pos => {
   dragDom.style.transform = `translate(${pos.x}px, ${pos.y}px)`
 })
-
-document.body.addEventListener('mouseup', _ => console.log('up'))
-document.body.addEventListener('mousedown', _ => console.log('down'))
