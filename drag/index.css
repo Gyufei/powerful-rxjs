@@ -1,0 +1,22 @@
+* {
+  user-select: none;
+}
+
+html body {
+  height: 1000px;
+}
+
+#drag {
+  width: 120px;
+  height: 120px;
+
+  transform: translate(0, 0);
+
+  background-color: #c2f;
+  cursor: all-scroll;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
