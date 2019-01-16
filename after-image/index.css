@@ -1,0 +1,25 @@
+html body {
+  height: 1200px;
+}
+
+img {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+
+  position: absolute;
+
+  transform: translate(0, 0);
+}
+
+
+.code_show {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+
+  width: 600px;
+
+  z-index: -1;
+}
