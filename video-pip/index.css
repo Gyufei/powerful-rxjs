@@ -49,18 +49,9 @@ video {
 
 .code_show {
   position: fixed;
-  right: 0px;
-  top: 0px;
+  right: 0;
+  top: 0;
 
   width: 600px;
   z-index: -1;
-}
-
-h4 {
-  margin-bottom: 0;
-}
-
-pre {
-  margin-top: 0;
-  margin-bottom: 0;
 }

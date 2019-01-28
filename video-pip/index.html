@@ -8,23 +8,13 @@
 </head>
 <body>
   <div class="video-container">
-    <video controls></video>
+    <video controls>
+      <source src="https://chimee.org/vod/1.mp4"></source>
+    </video>
   </div>
   <div id="video-offset-anchor"></div>
 
   <div class="code_show">
-      <h4>HTML:</h4>
-      <pre><code class="html xml">
-&lt;script src="https://cdn.bootcss.com/rxjs/6.1.0/rxjs.umd.min.js"&gt;
-&lt;/script&gt;
-
-&lt;div class="video-container"&gt;
-  &lt;video controls&gt;&lt;/video&gt;
-&lt;/div&gt;
-&lt;div id="video-offset-anchor"&gt;&lt;/div&gt;
-      </code></pre>
-
-      <h4>JavaScript:</h4>
       <pre><code class="javascript">
 const { fromEvent } = rxjs
 const { map, filter, concatMapTo, takeUntil, withLatestFrom } = rxjs.operators
@@ -76,31 +66,6 @@ function limitDragPos (val, max, min) {
   return Math.min(max, Math.max(val, min))
 }
       </code></pre>
-
-      <h4>CSS:</h4>
-      <pre><code class="css">
-html body { height: 2000px; }
-
-#video-offset-anchor { position: absolute; top: 300px; }
-
-.video-container { position: static; width: 600px; }
-
-.video-drag-container { 
-  position: fixed; width: 250px; top: 10px; left: 100px; 
-  cursor: all-scroll; 
-}
-
-video { width: 100%; }
-
-.video-drag-container:hover::before {
-  content: '拖拽来移动窗口位置'; 
-  position: absolute; width: 100%; height: 100%; 
-  display: flex; justify-content: center; align-items: center;
-  z-index: 2;
-
-  color: #fff; font-size: 18px; background-color: rgba(0, 0, 0, 0.8);
-}
-    </code></pre>
   </div>
   <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
