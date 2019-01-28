@@ -1,0 +1,31 @@
+#input {
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid black;
+  
+  padding: 0;
+  line-height: 24px;
+  font-size: 16px;  
+}
+
+#input:focus {
+  outline: none;
+  border-bottom-color: lightblue;
+}
+
+#sug-list {
+  width: 200px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#sug-list li {
+  cursor: pointer;
+  padding: 5px;
+}
+
+#sug-list li:hover {
+  background-color: #abd;
+}

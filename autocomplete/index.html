@@ -8,56 +8,12 @@
 </head>
 <body>
    <input id="input-box" type="text">
-    <ul id="sug-list">
-    </ul>
+   <ul id="sug-list">
+   </ul>
 
   <div class="code_show">
-    <h4>HTML:</h4>
-    <pre><code class="html xml">
-&lt;script src="https://cdn.bootcss.com/rxjs/6.1.0/rxjs.umd.min.js"&gt;
-&lt;/script&gt;
-
-&lt;img draggable="false" src="http://n.sinaimg.cn/sinacn00/200/w1080h720/20180927/18c2-hiixpuq0041291.jpg"&gt;
-&lt;img draggable="false" src="http://n.sinaimg.cn/sinacn00/200/w1080h720/20180927/18c2-hiixpuq0041291.jpg"&gt;
-&lt;img draggable="false" src="http://n.sinaimg.cn/sinacn00/200/w1080h720/20180927/18c2-hiixpuq0041291.jpg"&gt;
-&lt;img draggable="false" src="http://n.sinaimg.cn/sinacn00/200/w1080h720/20180927/18c2-hiixpuq0041291.jpg"&gt;
-&lt;img draggable="false" src="http://n.sinaimg.cn/sinacn00/200/w1080h720/20180927/18c2-hiixpuq0041291.jpg"&gt;
-&lt;img draggable="false" src="http://n.sinaimg.cn/sinacn00/200/w1080h720/20180927/18c2-hiixpuq0041291.jpg"&gt;
-    </code></pre>
-
-    <h3>JavaScript:</h3>
     <pre><code class="javascript">
-const { fromEvent } = rxjs
-const { map, delay } = rxjs.operators
-
-const imgArr = document.getElementsByTagName('img')
-const mouseMove$ = fromEvent(document.body, 'mousemove')
-
-function drag (img, index) {
-  mouseMove$.pipe(
-    map(e => ({ x: e.clientX, y: e.clientY })),
-    delay(index * 100)
-  ).subscribe(pos => {
-    img.style.transform = `translate(${pos.x}px, ${pos.y}px)`
-  })
-}
-
-[].forEach.call(imgArr, drag)
     </code></pre>
-
-    <h3>CSS:</h3>
-    <pre><code class="css">
-html body {
-  height: 1200px;
-}
-
-img {
-  position: absolute;
-  width: 60px;height: 60px;
-  border-radius: 50%;
-  transform: translate(0, 0);
-}
-
     </code></pre>
   </div>
   <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
