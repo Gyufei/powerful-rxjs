@@ -1,4 +1,8 @@
-#input {
+.input-container {
+  margin: 40vh 20vw;
+}
+
+#input-box {
   width: 200px;
   border: none;
   border-bottom: 1px solid black;
@@ -8,7 +12,7 @@
   font-size: 16px;  
 }
 
-#input:focus {
+#input-box:focus {
   outline: none;
   border-bottom-color: lightblue;
 }

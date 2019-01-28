@@ -1,0 +1,9 @@
+.code_show {
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  width: 600px;
+
+  z-index: -1;
+}

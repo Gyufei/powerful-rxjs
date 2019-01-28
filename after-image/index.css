@@ -12,14 +12,3 @@ img {
 
   transform: translate(0, 0);
 }
-
-
-.code_show {
-  position: fixed;
-  right: 0px;
-  top: 0px;
-
-  width: 600px;
-
-  z-index: -1;
-}

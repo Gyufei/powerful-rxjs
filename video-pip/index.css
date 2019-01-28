@@ -45,13 +45,3 @@ video {
   font-size: 18px;
   background-color: rgba(0, 0, 0, 0.8);
 }
-
-
-.code_show {
-  position: fixed;
-  right: 0;
-  top: 0;
-
-  width: 600px;
-  z-index: -1;
-}
