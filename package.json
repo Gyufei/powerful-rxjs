@@ -1,0 +1,24 @@
+{
+  "name": "powerful-rxjs",
+  "version": "1.0.0",
+  "description": "rxjs-demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "live-server ./ --port=1994"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gyufei/powerful-rxjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gyufei/powerful-rxjs/issues"
+  },
+  "homepage": "https://github.com/Gyufei/powerful-rxjs#readme",
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "rxjs": "^6.4.0"
+  }
+}

@@ -4,6 +4,4 @@
 
  ## Demo地址
 
-+ [20行代码实现图片拖拽](http://www.gyufei.cn/powerful-rxjs/drag)
-+ [B站的视频画中画功能](http://www.gyufei.cn/powerful-rxjs/video-pip)
-+ [即刻头像拖拽残影效果](http://www.gyufei.cn/powerful-rxjs/after-image)
+  [powerful-rxjs](http://www.gyufei.cn/powerful-rxjs)
